@@ -44,5 +44,5 @@ fn main() {
     let _absent_char: Option<char> = None;
     // This will not work as it is unsafe (some_number needs to converted to i32 first and errors need to be handeled)
     // let sum = 5 + some_number;
-    // This is where the match expression comes into play
+    // This is where the match construct comes into play
 }
