@@ -2,7 +2,7 @@
 
 ## Overview
 
-> Please keep in mind that this is a **work in progress**.
+> Please keep in mind that this is a **work in progress** and **not my primary focus** anymore.
 
 This repository includes my personal implementations of most code examples given in the [Rust book](https://doc.rust-lang.org/book/).
 
