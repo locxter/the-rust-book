@@ -9,9 +9,7 @@ fn main() {
             println!("1: Celsius to Fahrenheit");
             println!("2: Fahrenheit to Celsius");
             println!("3: Quit");
-            io::stdin()
-                .read_line(&mut mode)
-                .expect("Failed to read line");
+            io::stdin().read_line(&mut mode).expect("Failed to read line");
             break match mode.trim().parse() {
                 Ok(num) => num,
                 Err(_) => continue,
@@ -23,9 +21,7 @@ fn main() {
         let input_temp: i32 = loop {
             let mut input_temp = String::new();
             println!("\nEnter the temperature to convert:");
-            io::stdin()
-                .read_line(&mut input_temp)
-                .expect("Failed to read line");
+            io::stdin().read_line(&mut input_temp).expect("Failed to read line");
             break match input_temp.trim().parse() {
                 Ok(num) => num,
                 Err(_) => continue,
@@ -39,14 +35,8 @@ fn main() {
             );
         } else {
             println!("\nTemperature in Fahrenheit: {input_temp}");
-            println!(
-                "Temperature in Celsius: {}",
-                (input_temp - 32) as f64 * (5.0 / 9.0)
-            );
-            println!(
-                "Temperature in Celsius: {}",
-                (input_temp - 32) as f64 * (5.0 / 9.0)
-            );
+            println!("Temperature in Celsius: {}", (input_temp - 32) as f64 * (5.0 / 9.0));
+            println!("Temperature in Celsius: {}", (input_temp - 32) as f64 * (5.0 / 9.0));
         }
     }
 }

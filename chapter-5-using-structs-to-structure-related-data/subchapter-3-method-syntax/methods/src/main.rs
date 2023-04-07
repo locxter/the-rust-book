@@ -26,7 +26,8 @@ impl Rectangle {
         other.width <= self.width && other.height <= self.height
     }
 
-    // So called associated functions that are part of an implemenation but do not use the self reference are also possible (especially useful for constructors)
+    // So called associated functions that are part of an implemenation but do not use the self reference are also
+    // possible (especially useful for constructors)
     fn new(width: u32, height: u32) -> Self {
         Self { width, height }
     }
@@ -41,10 +42,7 @@ impl Rectangle {
 
 fn main() {
     // Methods also use the dot notation and therefore are easy to understand
-    let rect1 = Rectangle {
-        width: 30,
-        height: 50,
-    };
+    let rect1 = Rectangle { width: 30, height: 50 };
     println!("Area: {}", rect1.area());
     println!("Nonzero width: {}", rect1.width());
     println!("Nonzero height: {}", rect1.height());
@@ -52,14 +50,8 @@ fn main() {
     println!("Width: {}", rect1.width);
     println!("Height: {}", rect1.height);
     // Here some easy to read comparisions are going on
-    let rect2 = Rectangle {
-        width: 10,
-        height: 40,
-    };
-    let rect3 = Rectangle {
-        width: 60,
-        height: 45,
-    };
+    let rect2 = Rectangle { width: 10, height: 40 };
+    let rect3 = Rectangle { width: 60, height: 45 };
     println!("rect1 can hold rect2: {}", rect1.can_hold(&rect2));
     println!("rect1 can hold rect3: {}", rect1.can_hold(&rect3));
     // Our associated functions in use (called with :: instead of .)
@@ -67,5 +59,6 @@ fn main() {
     let square = Rectangle::new_square(50);
     println!("Area: {}", rect4.area());
     println!("Area: {}", square.area());
-    // You can also split your methods and associated functions into any number of implemntation blocks, which can be useful sometimes
+    // You can also split your methods and associated functions into any number of implemntation blocks, which can be
+    // useful sometimes
 }

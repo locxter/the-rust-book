@@ -60,10 +60,7 @@ struct Point<X1, Y1> {
 // A generic implementation mixing different generic types for better readibility
 impl<X1, Y1> Point<X1, Y1> {
     fn mixup<X2, Y2>(self, other: Point<X2, Y2>) -> Point<X1, Y2> {
-        Point {
-            x: self.x,
-            y: other.y,
-        }
+        Point { x: self.x, y: other.y }
     }
 }
 
@@ -76,7 +73,8 @@ fn main() {
     let result = largest_num(&num_list);
     println!("The largest number is {}", result);
     // However, they are type-specific by default and this is where generics come in
-    // Generics allow us to replace specific types with a placeholder that represents multiple types to remove even more duplicate code
+    // Generics allow us to replace specific types with a placeholder that represents multiple types to remove even more
+    // duplicate code
     let num_list = vec![34, 50, 25, 100, 65];
     let result = largest(&num_list);
     println!("The largest number is {}", result);
@@ -89,18 +87,21 @@ fn main() {
     // let mixed_point = UniformPoint { x: 5, y: 4.0 };
     let _mixed_point = MixedPoint { x: 5, y: 4.0 };
     let uniform_but_possibly_mixed_point = MixedPoint { x: 5.0, y: 4.0 };
-    // The usage of generics is also possible with enums as we already learned when taking a look at Option<T> and Result<T, E>
-    // And of cause you can also use generics in methods (and restrict their scope to certain data types)
+    // The usage of generics is also possible with enums as we already learned when taking a look at Option<T> and
+    // Result<T, E> And of cause you can also use generics in methods (and restrict their scope to certain data
+    // types)
     println!("interger_point.x = {}", integer_point.x());
     println!("float_point.x = {}", float_point.x());
     println!(
         "uniform_but_possibly_mixed_point.distance_from_origin = {}",
         uniform_but_possibly_mixed_point.distance_from_origin()
     );
-    // Generic type parameters in a struct definition do not always have to be the same as those you use in the struct’s method signatures
+    // Generic type parameters in a struct definition do not always have to be the same as those you use in the struct’s
+    // method signatures
     let p1 = Point { x: 5, y: 10.4 };
     let p2 = Point { x: "Hello", y: 'c' };
     let p3 = p1.mixup(p2);
     println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
-    // Last, but certainly not least we have to note that using generics does not have any negative perfomance costs due to Rust's clever compiler
+    // Last, but certainly not least we have to note that using generics does not have any negative perfomance costs due
+    // to Rust's clever compiler
 }

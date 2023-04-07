@@ -7,9 +7,7 @@ fn main() {
     loop {
         let mut guess = String::new();
         println!("Please input your guess:");
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
+        io::stdin().read_line(&mut guess).expect("Failed to read line");
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,

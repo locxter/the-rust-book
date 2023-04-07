@@ -6,9 +6,7 @@ fn main() {
         let n: i128 = loop {
             let mut count = String::new();
             println!("\nEnter n:");
-            io::stdin()
-                .read_line(&mut count)
-                .expect("Failed to read line");
+            io::stdin().read_line(&mut count).expect("Failed to read line");
             break match count.trim().parse() {
                 Ok(num) => num,
                 Err(_) => continue,

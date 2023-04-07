@@ -1,7 +1,8 @@
 use std::collections::HashMap;
 
 fn main() {
-    // Hash maps can be understood as a supercharged version of vectors, which uses keys of any type to identify a value instead of always using an index
+    // Hash maps can be understood as a supercharged version of vectors, which uses keys of any type to identify a value
+    // instead of always using an index
     let mut map = HashMap::new();
     // Values are added with .insert()
     map.insert(String::from("Blue"), 10);
@@ -18,7 +19,8 @@ fn main() {
     for (key, value) in &map {
         println!("{key}: {value}");
     }
-    // As the data is stored in heap, types that do not implement the Copy trait will be moved into the hash map and therefore owned by it
+    // As the data is stored in heap, types that do not implement the Copy trait will be moved into the hash map and
+    // therefore owned by it
     let key = String::from("Key");
     let value = String::from("Value");
     let mut other_map = HashMap::new();

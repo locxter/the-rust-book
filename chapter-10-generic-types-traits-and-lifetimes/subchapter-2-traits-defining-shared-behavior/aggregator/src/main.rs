@@ -24,8 +24,9 @@ pub fn notify_bound<T: Summary>(item: &T) {
 // {
 
 fn main() {
-    // Now that we know generics, it is time to look at how to define their behavior in an abstract manner (somewhat like interfaces in other languages)
-    // Traits allow us to group related method signatures together and apply them to a certain set of types, see lib.rs
+    // Now that we know generics, it is time to look at how to define their behavior in an abstract manner (somewhat
+    // like interfaces in other languages) Traits allow us to group related method signatures together and apply
+    // them to a certain set of types, see lib.rs
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
         content: String::from("of course, as you probably already know, people"),
@@ -37,5 +38,6 @@ fn main() {
     notify(&tweet);
     notify_bound(&tweet);
     // And are also valid for the return type of functions using the -> impl Summary { syntax
-    // Finally, we already looked at how to use trait bounds to conditionally implement methods in the last chapter with the impl<T: PartialOrd> Pair<T> { syntax
+    // Finally, we already looked at how to use trait bounds to conditionally implement methods in the last chapter with
+    // the impl<T: PartialOrd> Pair<T> { syntax
 }

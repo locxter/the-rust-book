@@ -13,7 +13,8 @@ fn main() {
     // More values can be added with the .push() method if the vector is mutual
     vec.push(4);
     vec.push(5);
-    // Values can be either read using the unsafe array bracket syntax (panics if the requested elements is outside the vector bounds) or using the safe .get() method (returns Option<&T>, which needs to be handeled safely)
+    // Values can be either read using the unsafe array bracket syntax (panics if the requested elements is outside the
+    // vector bounds) or using the safe .get() method (returns Option<&T>, which needs to be handeled safely)
     let third = &vec[2];
     println!("{third}");
     let fourth = vec.get(3);
@@ -21,8 +22,8 @@ fn main() {
         Some(fourth) => println!("{fourth}"),
         None => println!("Element does not exist"),
     }
-    // The ownership and borrowing rules still apply, so this code will not run as is uses immutable and mutuable references at the same time
-    // let first = &vec[0];
+    // The ownership and borrowing rules still apply, so this code will not run as is uses immutable and mutuable
+    // references at the same time let first = &vec[0];
     // vec.push(6);
     // println!("{first}");
     // Here is how to iterate over all elements using a for loop

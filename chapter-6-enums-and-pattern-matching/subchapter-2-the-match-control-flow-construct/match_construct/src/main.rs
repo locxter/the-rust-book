@@ -20,7 +20,8 @@ enum SpecialCoin {
 
 impl Coin {
     fn to_cents(&self) -> u8 {
-        // The match construct compares a value against all possible patterns and executes the code of the arm where the pattern matches
+        // The match construct compares a value against all possible patterns and executes the code of the arm where the
+        // pattern matches
         match self {
             Coin::Penny => {
                 println!("Lucky penny!");

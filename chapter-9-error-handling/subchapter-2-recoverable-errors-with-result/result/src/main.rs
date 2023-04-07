@@ -3,7 +3,8 @@ use std::{
     io::{self, ErrorKind, Read},
 };
 
-// Our first function propagating internal errors to the calling code, which can then decide what to do (panic, try again or use a default value)
+// Our first function propagating internal errors to the calling code, which can then decide what to do (panic, try
+// again or use a default value)
 fn _read_username() -> Result<String, io::Error> {
     let username_file_result = File::open("username.txt");
     let mut username_file = match username_file_result {
@@ -43,7 +44,8 @@ fn _last_char_of_first_line(text: &str) -> Option<char> {
 }
 
 fn main() {
-    // Most errors are not serious enough to require a full programm stop and therefore can be handeled with the Result<T, E> type, which can be either Ok or Err and includes the actual result of an operation
+    // Most errors are not serious enough to require a full programm stop and therefore can be handeled with the
+    // Result<T, E> type, which can be either Ok or Err and includes the actual result of an operation
     let greeting_file_result = File::open("hello.txt");
     // We can handle this easily with a match statement
     // let _greeting_file = match greeting_file_result {
@@ -66,5 +68,6 @@ fn main() {
     // Alternatively, .expect() does the same thing but allows us to provide our own error message
     let _greeting_file = File::open("hello.txt").expect("The file 'hello.txt' does not exist");
     // Functions can also pass their internal errors on to external code, look above
-    // This can also be done in the main function by settings its return type to Result<(), Box<dyn Error>> and adding Ok(()) at the end
+    // This can also be done in the main function by settings its return type to Result<(), Box<dyn Error>> and adding
+    // Ok(()) at the end
 }

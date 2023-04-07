@@ -39,15 +39,13 @@ fn main() {
     user1.email = String::from("someuser@example.com");
     println!("{}", user1.email);
     // Use our build user function to make things easier
-    let user2 = build_user(
-        String::from("someoneelse@example.com"),
-        String::from("someoneelse"),
-    );
+    let user2 = build_user(String::from("someoneelse@example.com"), String::from("someoneelse"));
     println!("{}", user2.active);
     println!("{}", user2.username);
     println!("{}", user2.email);
     println!("{}", user2.sign_in_count);
-    // Struct update syntax to include another instances values (borrows the heap data and therefore renders user1 unusable)
+    // Struct update syntax to include another instances values (borrows the heap data and therefore renders user1
+    // unusable)
     let user3 = User {
         email: String::from("another@example.com"),
         ..user1

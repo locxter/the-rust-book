@@ -21,18 +21,21 @@ fn gen_str() -> String {
 }
 
 fn main() {
-    // The same function using a reference for borrowing the data instead of owning it (multiple simultaneous references per variable possible)
+    // The same function using a reference for borrowing the data instead of owning it (multiple simultaneous references
+    // per variable possible)
     let s = String::from("Hi!");
     let len = str_len(&s);
     println!("{s}");
     println!("{len}");
     // Much better and easier to read/understand
 
-    // Mutable references for changing data without owning it (only one reference per variable possible at a time and exclusive with immutable ones)
+    // Mutable references for changing data without owning it (only one reference per variable possible at a time and
+    // exclusive with immutable ones)
     let mut s = String::from("Hello");
     modify_str(&mut s);
     println!("{s}");
-    // In conclusion, you can have either one mutable reference or any number of immutables references to a variable at any given time
+    // In conclusion, you can have either one mutable reference or any number of immutables references to a variable at
+    // any given time
 
     // Not worries about invalid dangling references
     let s = gen_str();

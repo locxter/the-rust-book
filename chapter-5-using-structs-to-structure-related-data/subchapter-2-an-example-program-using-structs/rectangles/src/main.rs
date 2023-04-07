@@ -29,14 +29,12 @@ fn main() {
     let rect1 = (30, 50);
     println!("Area: {}", area_tuple(rect1));
     // But only structs are the way to go here
-    let rect2 = Rectangle {
-        width: 30,
-        height: 50,
-    };
+    let rect2 = Rectangle { width: 30, height: 50 };
     println!("Area: {}", area_rect(&rect2));
     // Printing an instance of our struct will not work as does not implement any formatting by default
     // println!("rect2: {}", rect2);
-    // For debug prints we only have to add "#[derive(Debug)]" to the struct and use debug formatting with ":?" (or ":#?" for pretty output)
+    // For debug prints we only have to add "#[derive(Debug)]" to the struct and use debug formatting with ":?" (or
+    // ":#?" for pretty output)
     println!("rect2: {:?}", rect2);
     println!("rect2: {:#?}", rect2);
     // And for really fast debugging a marco exists for this (prints to stderr though)
