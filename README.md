@@ -2,7 +2,7 @@
 
 ## Overview
 
-> Please keep in mind that this is a **work in progress** and **not my primary focus** anymore.
+> This project is **DEPRECATED**, therefore might not be on par with my current coding standards and will not receive any updates now or in the future.
 
 This repository includes my personal implementations of most code examples given in the [Rust book](https://doc.rust-lang.org/book/).
 
